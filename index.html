@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุขสันต์วันเกิดอั้ม</title>
+    <link rel="stylesheet" href="style.css"> <!-- เชื่อมต่อไฟล์ CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <h2 class="one">สุขสันต์วันเกิดนะ</h2>
+    <h2 class="name">❤️ รวิภา ❤️</h2>
+
+    <img class="pic" src="image/1.png" alt="Image 1">
+
+    <p class="hbd">happy</p>
+    <p class="hb">birthday</p>
+    <p class="text">🎉มีความสุขมากๆนะครับ🎂</p>
+
+    <div class="polaroid-container">
+        <div class="polaroid polaroid-1">
+            <img src="image/2.jpg" alt="Image 2">
+        </div>
+        <div class="polaroid polaroid-2">
+            <img src="image/3.jpg" alt="Image 3">
+        </div>
+    </div>
+
+    <!-- Modal สำหรับการดูรูปภาพ -->
+    <div id="modal" class="modal">
+        <span id="close" class="close-btn"></span>
+        <img id="modal-img" class="modal-content" src="">
+        <div id="caption"></div>
+    </div>
+
+    <!-- เครื่องเล่นเพลง -->
+    <div class="main">
+
+        <!-- top_bar -->
+        <div class="top_bar">
+            <button onclick="sidebar()"><i class='bx bxs-chevron-right'></i></button>
+            <div class="options">
+                <button><i class='bx bx-volume-low'></i></button>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+            </div>
+        </div>
+
+        <div class="playing_part">
+            <div class="img">
+                <img src="image/IMG_2992.JPG" alt="img">
+            </div>
+        </div>
+
+        <!-- control part -->
+        <div class="control_part">
+            <div class="song_title">
+                <p id="songTitle">A Thousand Years</p>
+                <p id="songArtist">Christina Perri</p>
+            </div>
+
+            <div class="control_buttons">
+                <div class="range_slider">
+                    <input type="range" min="0" max="100" id="slider" value="0">
+                    <p id="songTime">0:00</p>
+                </div>
+
+                <div class="main_btns">
+                    <button id="previous"><i class='bx bx-skip-previous'></i></button>
+                    <button id="play_btn"><i class='bx bx-play'></i></button>
+                    <button id="next"><i class='bx bx-skip-next'></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- audio part -->
+    <audio id="audioPlayer" src="song/christina-perri-แปลไทย.mp3" preload="auto"></audio>
+
+    <div class="message-box">
+        <img src="image/IMG_4583.JPG" alt="">
+        <h3>คำอวยพร 🎂🎊🎈</h3>
+        <p>
+            หมาคับ เค้าอยากให้หมามีความสุขกับชีวิตมากๆเลยนะคับ ไม่ว่าจะทำสิ่งใดก็ตามขอให้ประสบความสำเร็จ
+            ขอให้สุขภาพร่างกายแข็งแรงไม่เจ็บไม่ป่วยไม่ปวดหลังแข็งแรงตลอดไปเลยนะ มีความสุขกับชีวิตนะคับ
+            อย่ายึดติดกับสิ่งที่เราทำไม่ได้หรือสิ่งที่มันผ่านไปแล้วนะ
+            ให้เรียนรู้ข้อผิดพลาดจากมันแล้วแก้ไขตัวเองให้ดีขึ้น อย่าสนใจคำคนอื่นและเสียงที่บอกว่าทำไม่ได้
+            เพราะถ้าเราจะทำได้ไม่ต้องมีใครเลยคับ มีแค่คนที่สนับสนุนเราและรู้สึกยินดีกับเรา
+            เท่านั้นเองหมาคับเค้าขอให้หมาทำตัวเองให้มีความสุขในทุกๆวัน ทุกๆช่วงชีวิตหมาต้องมีความสุขในทุกๆวันนะคับ
+            เรียนไปเรื่อยๆ ทำงานไปเรื่อยๆ ขอให้เจอแต่สิ่งดีๆในชีวิตนะครับผมและก็เป็นตัวเอง เค้ารักหมามากๆนะ
+            อยู่กับเค้าไปนานๆนะค้าบบ ออกกำลังกายดูแลสุขภาพด้วย เลือกกินอาหารดีๆจะได้อยู่ไปนานๆ ไม่เจ็บป่วยง่ายๆนะ
+            ถึงวันนี้เค้าจะไม่ได้อยู่กับหมาแต่เดี๋ยวเค้ากลับไปหานะค้าบบ (บักหมาน้อยของเค้า❤️) 
+            เอ่ออ รูปข้างล่างอะ มันเลื่อนได้นะค้าบบ 
+        </p>
+    </div>
+
+    <div class="photo-stack">
+        <div class="photo" style="background-image: url('image/4.jpg');"></div>
+        <div class="photo" style="background-image: url('image/5.jpg');"></div>
+        <div class="photo" style="background-image: url('image/6.jpg');"></div>
+        <div class="photo" style="background-image: url('image/7.jpg');"></div>
+        <div class="photo" style="background-image: url('image/8.jpg');"></div>
+        <div class="photo" style="background-image: url('image/9.jpg');"></div>
+        <div class="photo" style="background-image: url('image/10.jpg');"></div>
+        <div class="photo" style="background-image: url('image/11.jpg');"></div>
+        <div class="photo" style="background-image: url('image/12.jpg');"></div>
+        <div class="photo" style="background-image: url('image/13.jpg');"></div>
+    </div>
+
+    <!-- Importing JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

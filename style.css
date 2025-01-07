@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Birthstone&display=swap');
+
+body {
+    background-image: url("image/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: 'Mitr', sans-serif;
+}
+
+.one,
+.name,
+.pic,
+.hbd,
+.hb,
+.text {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(5px);
+    animation: fadeInUp 1.0s forwards;
+}
+
+.one {
+    font-family: 'Mitr', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #333;
+    animation-delay: 0.2s;
+}
+
+.name {
+    text-align: center;
+    font-family: 'Mitr', sans-serif;
+    margin: 0;
+    font-size: 30px;
+    color: #333;
+    animation-delay: 0.4s;
+}
+
+.pic {
+    max-width: 400px;
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 1px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation-delay: 0.6s;
+    cursor: pointer;
+}
+
+.hbd {
+    font-family: "Birthstone", cursive;
+    margin-top: 8px;
+    font-size: 10vw;
+    text-align: center;
+    color: #333;
+    animation-delay: 0.8s;
+}
+
+.hb {
+    font-family: "Birthstone", cursive;
+    font-size: 9vw;
+    text-align: center;
+    color: #333;
+    animation-delay: 1s;
+    margin-top: -50px;
+}
+
+.text {
+    text-align: center;
+    font-family: 'Mitr', sans-serif;
+    font-size: 25px;
+    margin-top: -20px;
+    color: #333;
+    margin-bottom: 20px;
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.polaroid-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.polaroid {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    
+}
+
+.polaroid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.polaroid-1 {
+    transform: rotate(-10deg);
+    z-index: 2;
+}
+
+.polaroid-2 {
+    transform: rotate(10deg);
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+.polaroid img {
+    animation: wiggle 1s infinite alternate ease-in-out;
+}
+
+.wiggle {
+    animation: wiggle 1s infinite alternate ease-in-out;
+}
+
+
+#caption {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.close-btn {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*เครื่องเล่นเพลง*/
+.main {
+    position: relative;
+    width: 350px;
+    height: 520px;
+    border-radius: 18px;
+    background: #b22222;
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.main .top_bar .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-70px);
+    transition: 0.5s;
+}
+
+.main .top_bar .active2 {
+    transform: translateY(0px);
+}
+
+.main .top_bar .options button {
+    margin: 0 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+}
+
+.main .top_bar {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main .top_bar button {
+    z-index: 20;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main .top_bar button:hover,
+.main .control_part .control_buttons .main_btns button:hover {
+    background: linear-gradient(to right, #ff5722, #ff7043);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+        0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main .playing_part {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main .playing_part .img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0.1px 4px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.main .playing_part .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main .playing_part .img img.rotate {
+    animation: rotateImage 10s linear infinite;
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* control part */
+.main .control_part {
+    margin-top: -20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main .control_part .song_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.main .control_part .song_title p {
+    font-size: 14px;
+}
+
+.main .control_part .song_title p:first-child {
+    font-size: 22px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.main .control_part .control_buttons {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main .control_part .control_buttons .main_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main .control_part .control_buttons .main_btns button {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 18px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.08);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main .control_part .control_buttons .main_btns #play_btn {
+    background: linear-gradient(to right, #ff5722, #ff7043);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+        0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* range slider part */
+.range_slider {
+    width: 60%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.range_slider p {
+    font-size: 13px;
+}
+
+.main .control_part #slider {
+    -webkit-apperarance: none;
+    outline: none;
+    width: 85%;
+    height: 4px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-apperarance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    background: linear-gradient(to right, #ff5722, #ff7043);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+        0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* กล่องข้อความหลัก */
+.message-box {
+    width: 350px;
+    padding: 20px;
+    background: #ffffff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* จัดการรูปภาพในมุม */
+.message-box img {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 19%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: rotate(10deg);
+    border: 2px solid #333;
+}
+
+/* สไตล์หัวข้อ */
+.message-box h3 {
+    font-size: 24px;
+    margin-top: 0;
+    color: #333;
+}
+
+/* สไตล์ข้อความ */
+.message-box p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* เน้นคำในประโยค */
+.message-box p strong {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+.message-box img {
+    animation: wiggle 1s infinite alternate ease-in-out;
+}
+
+.wiggle {
+    animation: wiggle 1s infinite alternate ease-in-out;
+}
+
+
+/* ช่องกรอกรหัสผ่าน */
+
+/* ชุดรูปภาพ */
+.photo-stack {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    perspective: 1000px;
+}
+
+/* สำหรับการจัดการแต่ละรูป */
+.photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    z-index: 0;
+    /* เพิ่ม z-index เพื่อให้รูปภาพซ้อนกันถูกต้อง */
+}
+
+/* ซ้อนภาพให้แต่ละภาพมีการเลื่อนนิดหน่อย */
+.photo:nth-child(1) {
+    transform: translateZ(-10px) rotate(-3deg);
+}
+
+.photo:nth-child(2) {
+    transform: translateZ(-20px) rotate(2deg);
+}
+
+.photo:nth-child(3) {
+    transform: translateZ(-30px) rotate(-2deg);
+}
+
+.photo:nth-child(4) {
+    transform: translateZ(-40px) rotate(3deg);
+}
+
+.photo:nth-child(5) {
+    transform: translateZ(-50px) rotate(-1deg);
+}
+
+.photo:nth-child(6) {
+    transform: translateZ(-60px) rotate(1deg);
+}
+
+.photo:nth-child(7) {
+    transform: translateZ(-70px) rotate(-4deg);
+}
+
+.photo:nth-child(8) {
+    transform: translateZ(-80px) rotate(2deg);
+}
+
+.photo:nth-child(9) {
+    transform: translateZ(-90px) rotate(-3deg);
+}
+
+.photo:nth-child(10) {
+    transform: translateZ(-100px) rotate(1deg);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
